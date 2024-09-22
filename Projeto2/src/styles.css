@@ -1,0 +1,29 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.container {
+  /* ... */
+  background-color: #f5f5f5; /* Fundo suave */
+}
+
+li {
+  /* ... */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra discreta */
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.completed {
+  /* ... */
+  background-color: #e0ffe0; /* Verde claro para tarefas concluídas */
+}
+
+.delete-button {
+  /* Estilos para o botão de excluir */
+  background-color: #ffdddd;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}

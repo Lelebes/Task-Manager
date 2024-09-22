@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="task-filter">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Search Tasks"
+          (input)="onSearch($event.target.value)"
+        />
+        matInput<input
+          matInput
+          placeholder="Search Tasks"
+          (input)="onSearch($event.target.value)"
+        />
+        placeholder="Search Tasks"onFilterChange(event: any) { if (event &&
+        event.value) { // process the event.value } }onFilterChange(event: any)
+        { const value = event?.value; if (value) { // process the value } }
+        (input)="onSearch($event.target.value)"
+      </mat-form-field>
+
+      <mat-button-toggle-group
+        name="filter"
+        aria-label="Task Status"
+        (change)="onFilterChange($event.value)"
+      >
+        <mat-button-toggle value="all">All</mat-button-toggle>
+        <mat-button-toggle value="completed">Completed</mat-button-toggle>
+        <mat-button-toggle value="pending">Pending</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </body>
+</html>

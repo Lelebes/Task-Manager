@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Form</title>
+  </head>
+  <body>
+    <div class="task-form">
+      <h2>{{ editing ? "Edit Task" : "New Task" }}</h2>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      
+        <mat-form-field appearance="fill">
+          <mat-label>Task Title</mat-label>
+          <input matInput placeholder="Task Title" formControlName="title" />
+          <mat-error *ngIf="taskForm.get('title').invalid">
+            Title is required
+          </mat-error>
+        </mat-form-field>
+
+       
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            placeholder="Description"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Due Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Due Date"
+            formControlName="dueDate"
+          />
+          <mat-datepicker-toggle { MatDatepickerToggle } from '@angular/material/datepicker';picker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="taskForm.invalid"
+        >
+          Save Task
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

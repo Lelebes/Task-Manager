@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="task-list">
+      <h2>Your Tasks</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let task of tasks">
+          {{ task.name }}
+        </mat-list-item>
+      </mat-list>
+
+      <div>
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <p>Due: {{ task.dueDate | date }}</p>
+      </div>
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="completeTask(task.id)"
+      ></button>
+    </div>
+  </body>
+</html>
