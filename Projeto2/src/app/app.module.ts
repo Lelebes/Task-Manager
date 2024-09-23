@@ -14,13 +14,14 @@ import { AppComponent } from './app.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { TaskService } from './services/task.service';
 import { MatListModule } from '@angular/material/list';
+import { TaskFilterComponent } from './task-filter/task-filter.component';
 
 const routes: Routes = [
   { path: 'task-details/:id', component: TaskDetailsComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [TaskFilterComponent],
   imports: [
     MatListModule,
     MatDatepickerToggle,
@@ -38,6 +39,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   providers: [TaskService],
-  bootstrap: [AppComponent],
+  bootstrap: [],
 })
 export class AppModule {}

@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter, NgModule } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
-  imports: [MatButtonToggleModule, BrowserAnimationsModule],
+  imports: [MatButtonToggleModule, BrowserAnimationsModule, MatFormFieldModule],
 })
 export class AppModule {}
 
@@ -16,9 +17,14 @@ export class AppModule {}
 export class TaskFilterComponent {
   @Output() searchEvent = new EventEmitter<string>();
   @Output() filterChangeEvent = new EventEmitter<string>();
+  $event: any;
 
-  onSearch(query: string) {
-    this.searchEvent.emit(query);
+  onSearch(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement) {
+      const value = inputElement.value;
+      // Process the value here
+    }
   }
 
   onFilterChange(filter: string) {

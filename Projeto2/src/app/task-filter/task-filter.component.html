@@ -6,23 +6,22 @@
     <title>Document</title>
   </head>
   <body>
+    @if($event.target.value != null){
     <div class="task-filter">
-      <mat-form-field
+      <mat-form-field>
+        <input
           matInput
           placeholder="Search Tasks"
           (input)="onSearch($event.target.value)"
-    />
-      </mat-form-field
-          matInput
-          placeholder="Search Tasks"
-          (input)="onSearch($event.target.value)"
-        
-        placeholder="Search Tasks"onFilterChange(event: any) { if (event &&
-        event.value) { // process the event.value } }onFilterChange(event: any)
-        { const value = event?.value; if (value) { // process the value } }
-        (input)="onSearch($event.target.value)"/>
+        />
       </mat-form-field>
-
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Search Tasks"
+          (input)="onSearch($event.target.value)"
+        />
+      </mat-form-field>
       <mat-button-toggle-group
         name="filter"
         aria-label="Task Status"
@@ -33,5 +32,6 @@
         <mat-button-toggle value="pending">Pending</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
+    }
   </body>
 </html>
